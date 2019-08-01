@@ -7,8 +7,12 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Todo")
 data class Todo(
     @PrimaryKey(autoGenerate = true)
-    var _Id: Int? = null,
+    var _Id: Long? = null,
 
     @ColumnInfo(name = "title")
     var title: String? = ""
-)
+){
+    override fun toString(): String {
+        return "--> $_Id || $title"
+    }
+}

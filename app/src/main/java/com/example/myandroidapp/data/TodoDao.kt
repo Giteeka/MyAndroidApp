@@ -14,7 +14,7 @@ interface TodoDao {
     fun getAll(): List<Todo>
 
     @Insert(onConflict = REPLACE)
-    fun insert(todo: Todo)
+    fun insert(todo: Todo): Long
 
     @Update(onConflict = REPLACE)
     fun update(todo: Todo)
